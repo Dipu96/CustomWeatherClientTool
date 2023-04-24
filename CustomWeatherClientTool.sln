@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomWeatherClientTool", "CustomWeatherClientTool\CustomWeatherClientTool.csproj", "{7C99A4F4-40A1-42FA-B92C-2DC70FC70B43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomWeatherClientToolUnitTest", "CustomWeatherClientToolUnitTest\CustomWeatherClientToolUnitTest.csproj", "{16278FD3-9052-47A4-9A89-241CE6204F4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C99A4F4-40A1-42FA-B92C-2DC70FC70B43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C99A4F4-40A1-42FA-B92C-2DC70FC70B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C99A4F4-40A1-42FA-B92C-2DC70FC70B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C99A4F4-40A1-42FA-B92C-2DC70FC70B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16278FD3-9052-47A4-9A89-241CE6204F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16278FD3-9052-47A4-9A89-241CE6204F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16278FD3-9052-47A4-9A89-241CE6204F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16278FD3-9052-47A4-9A89-241CE6204F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {210269A1-518C-4137-B8B8-B8AD8C1E6569}
+	EndGlobalSection
+EndGlobal
