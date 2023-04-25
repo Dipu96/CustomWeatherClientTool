@@ -9,5 +9,5 @@ dotnet build
 Run => (go inside the directory: "..\CustomWeatherClientTool\CustomWeatherClientTool" and then run the below command)
 dotnet run 
 
-(go inside the directory: "..\CustomWeatherClientTool\CustomWeatherClientToolUnitTest" and then run the below command)
-Unit Test => dotnet test 
+Unit Test => (go inside the directory: "..\CustomWeatherClientTool\CustomWeatherClientToolUnitTest" and then run the below command)
+dotnet test 
