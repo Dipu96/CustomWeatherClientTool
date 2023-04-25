@@ -62,19 +62,26 @@ public class Program
 
         //Calling the API Endpoint
         var response = client.GetAsync($"{WeatherApiUrl}?latitude={latitute}&longitude={longitude}&current_weather=true");
-        response.Wait();
-        if (response.IsCompleted)
+        
+        try
         {
-            var result = response.Result;
-            if (result.IsSuccessStatusCode)
+            response.Wait();
+            if (response.IsCompleted)
             {
-                string stringData = result.Content.ReadAsStringAsync().Result;
-                cityResponse = JsonSerializer.Deserialize<CityResponse>(stringData);
+                var result = response.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    string stringData = result.Content.ReadAsStringAsync().Result;
+                    cityResponse = JsonSerializer.Deserialize<CityResponse>(stringData);
+                }
+                else { cityResponse = null; }
             }
-            else { cityResponse = null; }
+            else Console.WriteLine($"{response.Status}");
         }
-
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
         return cityResponse;
-
     }
 }
