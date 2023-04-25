@@ -61,10 +61,10 @@ public class Program
         CityResponse cityResponse = null;
 
         //Calling the API Endpoint
-        var response = client.GetAsync($"{WeatherApiUrl}?latitude={latitute}&longitude={longitude}&current_weather=true");
-        
         try
         {
+            var response = client.GetAsync($"{WeatherApiUrl}?latitude={latitute}&longitude={longitude}&current_weather=true");
+
             response.Wait();
             if (response.IsCompleted)
             {
