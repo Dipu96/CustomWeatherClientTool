@@ -10,11 +10,11 @@ public class Program
 
     private static void Main(string[] args)
     {
-        Console.WriteLine("Enter a city name");
+        Console.WriteLine("\nEnter a city name");
         string city = Console.ReadLine().ToString();
 
-        string text = File.ReadAllText(@".\Data\Cities.json");
-        var getCityList = JsonSerializer.Deserialize<List<City>>(text);
+        string jsonData = File.ReadAllText(@".\Data\Cities.json");
+        var getCityList = JsonSerializer.Deserialize<List<City>>(jsonData);
 
         GetLatitude(city, getCityList, out decimal latitute, out decimal longitude);
 
@@ -40,7 +40,7 @@ public class Program
 
         foreach (var item in cityName)
         {
-            if (city == item.city)
+            if (city.ToLower() == item.city.ToLower())
             {
                 lat = Convert.ToDecimal(item.lat);
                 lng = Convert.ToDecimal(item.lng);
@@ -58,7 +58,7 @@ public class Program
         var contentType = new MediaTypeWithQualityHeaderValue("application/json");
         client.DefaultRequestHeaders.Accept.Add(contentType);
 
-        CityResponse cityResponse = new CityResponse();
+        CityResponse cityResponse = null;
 
         //Calling the API Endpoint
         var response = client.GetAsync($"{WeatherApiUrl}?latitude={latitute}&longitude={longitude}&current_weather=true");
@@ -71,7 +71,7 @@ public class Program
                 string stringData = result.Content.ReadAsStringAsync().Result;
                 cityResponse = JsonSerializer.Deserialize<CityResponse>(stringData);
             }
-            else { cityResponse = new CityResponse(); }
+            else { cityResponse = null; }
         }
 
         return cityResponse;
